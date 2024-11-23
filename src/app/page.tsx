@@ -1,43 +1,34 @@
-// src/app/page.tsx
-
-"use client";
-
+import { LandingPage} from '@/components/landing-page';
 import { TokenGate } from '@/components/TokenGate';
-import Footer from '@/components/Footer';
-import { LandingPage } from '@/components/landing-page';
-import { Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { getSession } from '@/utils/session';
 
-// Page Component
-export default function Page() {
-  const searchParams = useSearchParams();
 
+
+/**
+ * The revalidate property determine's the cache TTL for this page and
+ * all fetches that occur within it. This value is in seconds.
+ */
+export const revalidate = 180;
+
+async function Content({ searchParams }: { searchParams: SearchParams }) {
+  const data = await getSession(searchParams);
+  // Console log the data to see what's available
+  // You can see these logs in the terminal where
+  // you run `yarn dev`
+  console.log({ data });
+  return (
+
+<main>
+
+<h1>Hello & Welcome, &nbsp; &nbsp; <code>{data.client ? data.client.givenName : data.company?.name}</code></h1>
+<LandingPage/> 
+    </main>
+  );
+}
+export default function Page({ searchParams }: { searchParams: SearchParams }) {
   return (
     <TokenGate searchParams={searchParams}>
-      <Suspense fallback={<div>Loading...</div>}>
-        <main>
-          <h1
-            className="
-              absolute 
-              top-5 
-              left-5 
-              z-[9999] 
-              bg-[#14151A] 
-              text-white 
-              p-2.5 
-              rounded-md 
-              text-lg 
-              font-sans 
-              shadow-md 
-              w-auto
-            "
-          >
-            Welcome! <code>{searchParams.get('token') || 'Guest'}</code>
-          </h1>
-          <LandingPage />
-          <Footer />
-        </main>
-      </Suspense>
+      <Content searchParams={searchParams} />
     </TokenGate>
   );
 }
