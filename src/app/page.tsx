@@ -1,8 +1,7 @@
-import { LandingPage} from '@/components/landing-page';
+import Footer from '@/components/Footer';
+import { LandingPage } from '@/components/landing-page';
 import { TokenGate } from '@/components/TokenGate';
 import { getSession } from '@/utils/session';
-
-
 
 /**
  * The revalidate property determine's the cache TTL for this page and
@@ -17,11 +16,35 @@ async function Content({ searchParams }: { searchParams: SearchParams }) {
   // you run `yarn dev`
   console.log({ data });
   return (
+    <main>
+      <h1
+        className="
+          absolute
+          top-[18%]
+          left-5
+          z-[9999]
+          bg-[#14151A]
+          text-white
+          p-4
+          rounded-md
+          text-xl
+          font-sans
+          shadow-md
+          w-auto
+          leading-tight
+          text-center
+        "
+      >
+        Let&apos;s get you started <br />
+        <span className="font-semibold text-lg">
+          {' '}
+          Jack
+          {data.client ? data.client.givenName : data.company?.name}
+        </span>
+      </h1>
 
-<main>
-
-<h1>Hello & Welcome, &nbsp; &nbsp; <code>{data.client ? data.client.givenName : data.company?.name}</code></h1>
-<LandingPage/> 
+      <LandingPage />
+      <Footer />
     </main>
   );
 }
