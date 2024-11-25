@@ -1,9 +1,29 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { productVideos } from '@/content/landingPageContent';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
+
+const productVideos = [
+  {
+    title: 'AI Inbox Manager',
+    url: 'https://youtu.be/u8xN-hWSnoo',
+    description:
+      'Revolutionize Your Email Management. Say goodbye to inbox overload. Our AI Inbox Manager intelligently prioritizes, categorizes, and responds to emails, ensuring you stay organized and focused on what matters most.',
+  },
+  {
+    title: 'AI Content Generator',
+    url: 'https://youtu.be/rseJGWxFCVo',
+    description:
+      'Unleash Your Creative Potential. Creating high-quality content consistently is a challenge. Our AI Content Generator assists you in producing engaging articles, social media posts, marketing copy, and more, all tailored to your brand voice.',
+  },
+  {
+    title: 'AI Marketing Analytics',
+    url: 'https://youtu.be/zaQyYuYxSuQ',
+    description:
+      'Drive Data-Driven Decisions. Unlock deep insights into your marketing performance with our AI Marketing Analytics tool. Analyze data from multiple channels to optimize your strategies and maximize ROI.',
+  },
+];
 
 export default function VideoCarouselSection() {
   const [activeVideo, setActiveVideo] = useState(0);

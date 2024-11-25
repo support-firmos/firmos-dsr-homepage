@@ -1,8 +1,50 @@
 import TimelineSegment from '@/components/TimelineSegment';
 import { Card, CardContent } from '@/components/ui/card';
-import { products } from '@/content/landingPageContent';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+
+const products = [
+  {
+    title: 'AI Talent Management',
+    timeline: '30 Days',
+    description:
+      'Advanced AI-powered system for recruiting, employee development, and workforce optimization.',
+    position: 'top',
+    color: '#323232',
+  },
+  {
+    title: 'AI Inbox Manager',
+    timeline: '30 Days',
+    description:
+      'Smart email management system that prioritizes, categorizes, and automates responses.',
+    position: 'bottom',
+    color: '#666666',
+  },
+  {
+    title: 'AI Content Generator',
+    timeline: '30 Days',
+    description:
+      'Automated content creation tool for marketing materials, social media, and documentation.',
+    position: 'top',
+    color: '#999999',
+  },
+  {
+    title: 'AI Marketing Analytics',
+    timeline: '30 Days',
+    description:
+      'Comprehensive analytics platform for tracking and optimizing marketing campaigns.',
+    position: 'bottom',
+    color: '#323232',
+  },
+  {
+    title: 'AI Invoice & Expenses',
+    timeline: '30 Days',
+    description:
+      'Automated system for managing invoices, track expenses, and financial reporting.',
+    position: 'top',
+    color: '#FFFFFF',
+  },
+];
 
 export default function RoadmapSection() {
   const [selectedRoadmapIndex, setSelectedRoadmapIndex] = useState(0);

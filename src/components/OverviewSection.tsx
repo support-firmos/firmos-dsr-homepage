@@ -1,7 +1,24 @@
-import { overviewItems } from '@/content/landingPageContent';
 import { motion } from 'framer-motion';
-import { ArrowRight, Clock } from 'lucide-react';
+import { ArrowRight, BarChart3, Clock, Users, Zap } from 'lucide-react';
 import Link from 'next/link';
+
+const overviewItems = [
+  {
+    icon: Zap,
+    title: 'Business Development',
+    description: 'Attract high-value clients and build a consistent pipeline.',
+  },
+  {
+    icon: Users,
+    title: 'Talent Management',
+    description: 'Retain top talent and empower your team for success.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Operations',
+    description: 'Streamline processes and improve workflow efficiency.',
+  },
+];
 
 export default function OverviewSection() {
   return (
