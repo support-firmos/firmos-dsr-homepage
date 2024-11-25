@@ -1,6 +1,6 @@
 import { TokenGate } from '@/components/TokenGate';
 import Footer from '@/components/Footer';
-import { LandingPage } from '@/components/landing-page';
+import { LandingPage } from '@/components/LandingPage';
 import { getSession } from '@/utils/session';
 
 async function Content({ searchParams }: { searchParams: SearchParams }) {
