@@ -1,3 +1,6 @@
+import { Zap, Users, BarChart3, LucideProps } from 'lucide-react';
+import { ForwardRefExoticComponent, RefAttributes } from 'react';
+
 type FAQCategory = {
   category: string;
   icon: React.ReactNode;
@@ -20,6 +23,20 @@ type ClientVideo = {
   operations: string;
   url: string;
   overview: string;
+};
+
+type OverviewItem = {
+  icon: ForwardRefExoticComponent<
+    Omit<LucideProps, 'ref'> & RefAttributes<SVGSVGElement>
+  >;
+  title: string;
+  description: string;
+};
+
+type ProductVideo = {
+  title: string;
+  url: string;
+  description: string;
 };
 
 export const faqList: FAQCategory[] = [
@@ -179,5 +196,44 @@ export const clientVideos: ClientVideo[] = [
     url: 'https://youtu.be/G4AvCFjtQWA',
     overview:
       'Incommon Projects transformed their educational technology offerings using FirmOS, leading to a 55% increase in student engagement and a 40% improvement in learning outcomes. Our adaptive learning algorithms and analytics tools revolutionized personalized education delivery.',
+  },
+];
+
+export const overviewItems = [
+  {
+    icon: Zap,
+    title: 'Business Development',
+    description: 'Attract high-value clients and build a consistent pipeline.',
+  },
+  {
+    icon: Users,
+    title: 'Talent Management',
+    description: 'Retain top talent and empower your team for success.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Operations',
+    description: 'Streamline processes and improve workflow efficiency.',
+  },
+];
+
+export const productVideos: ProductVideo[] = [
+  {
+    title: 'AI Inbox Manager',
+    url: 'https://youtu.be/u8xN-hWSnoo',
+    description:
+      'Revolutionize Your Email Management. Say goodbye to inbox overload. Our AI Inbox Manager intelligently prioritizes, categorizes, and responds to emails, ensuring you stay organized and focused on what matters most.',
+  },
+  {
+    title: 'AI Content Generator',
+    url: 'https://youtu.be/rseJGWxFCVo',
+    description:
+      'Unleash Your Creative Potential. Creating high-quality content consistently is a challenge. Our AI Content Generator assists you in producing engaging articles, social media posts, marketing copy, and more, all tailored to your brand voice.',
+  },
+  {
+    title: 'AI Marketing Analytics',
+    url: 'https://youtu.be/zaQyYuYxSuQ',
+    description:
+      'Drive Data-Driven Decisions. Unlock deep insights into your marketing performance with our AI Marketing Analytics tool. Analyze data from multiple channels to optimize your strategies and maximize ROI.',
   },
 ];
