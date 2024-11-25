@@ -1,3 +1,4 @@
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   headers: async () => {
     return [
@@ -6,7 +7,7 @@ const nextConfig = {
         headers: [
           {
             key: 'X-Frame-Options',
-            value: '', // Make sure this is empty to allow embedding
+            value: '', // Ensure this value is properly set if needed
           },
           {
             key: 'X-Content-Type-Options',
@@ -15,11 +16,6 @@ const nextConfig = {
           {
             key: 'X-XSS-Protection',
             value: '1; mode=block',
-          },
-          {
-            key: 'Content-Security-Policy',
-            value:
-              "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; media-src 'self' https://youtube.com;",
           },
         ],
       },
