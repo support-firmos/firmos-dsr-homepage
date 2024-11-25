@@ -10,11 +10,8 @@ import {
 } from '@/components/ui/dialog';
 import { Card, CardContent } from '@/components/ui/card';
 import {
-  Calendar,
   ChevronRight,
   ChevronLeft,
-  Menu,
-  X,
   ArrowRight,
   Clock,
   Award,
@@ -22,7 +19,6 @@ import {
   ChevronDown,
 } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   faqList,
@@ -31,63 +27,8 @@ import {
   overviewItems,
   productVideos,
 } from '@/content/landingPageContent';
-
-function TimelineSegment({
-  product,
-  index,
-  isSelected,
-  onSelect,
-}: {
-  product: { position: string; [key: string]: any }; // Define 'position' and allow additional properties
-  index: number;
-  isSelected: boolean;
-  onSelect: (index: number) => void;
-}) {
-  const isTop = product.position === 'top';
-  const hoverColor = '#FE7443';
-
-  return (
-    <div
-      className={`relative flex-1 h-24 flex items-stretch transition-all duration-300 cursor-pointer group`}
-      onClick={() => onSelect(index)}
-    >
-      {/* Rectangle part */}
-      <div
-        className={`flex-1 flex items-center justify-center transition-all duration-300 relative group-hover:bg-[#FE7443]`}
-        style={{
-          backgroundColor: isSelected ? hoverColor : product.color,
-        }}
-      >
-        <span
-          className={`text-2xl font-bold z-10 transition-colors duration-300
-          ${index > 2 ? 'text-[#323232] group-hover:text-white' : 'text-white'}
-          ${isSelected ? 'text-white' : ''}`}
-        >
-          {product.timeline}
-        </span>
-      </div>
-
-      {/* Triangle part */}
-      <div
-        className={`w-8 transition-all duration-300 group-hover:bg-[#FE7443]`}
-        style={{
-          clipPath: 'polygon(0 0, 0 100%, 100% 50%)',
-          backgroundColor: isSelected ? hoverColor : product.color,
-        }}
-      />
-
-      <div
-        className={`absolute text-xl font-bold transition-all duration-300 w-48 text-center
-          ${isTop ? '-top-20' : 'bottom-[-5rem]'}
-          left-[calc(50%-6rem)]
-          ${isSelected ? 'text-[#FE7443]' : 'group-hover:text-[#FE7443]'}
-          ${index > 2 ? 'text-[#323232] hover:text-[#FE7443]' : 'text-white'}`}
-      >
-        {product.title}
-      </div>
-    </div>
-  );
-}
+import TimelineSegment from '@/components/TimelineSegment';
+import NavigationBar from '@/components/NavigationBar';
 
 export function LandingPage() {
   const [activeVideo, setActiveVideo] = useState(0);
@@ -145,154 +86,12 @@ export function LandingPage() {
     <div className="min-h-screen relative overflow-hidden bg-[#000000] text-[#FFFFFF]">
       <div className="relative">
         {/* Navigation Bar */}
-        <nav
-          className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#000000]/90 backdrop-blur-sm' : 'bg-transparent'} py-4`}
-        >
-          <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between h-20">
-              <Link href="#" className="flex items-center">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FirmOS%20Logo%20-%20White-ccaDc4vMhJOlqCR9jcM2XDUIHbHJ28.png"
-                  alt="FirmOS Logo"
-                  width={180}
-                  height={40}
-                  className="h-12 w-auto"
-                  priority
-                />
-              </Link>
-
-              {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center space-x-8">
-                <div className="bg-[#323232]/40 backdrop-blur-sm rounded-full px-6 py-2 flex items-center space-x-6">
-                  <Link
-                    href="#"
-                    className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
-                  >
-                    Home
-                  </Link>
-                  <Link
-                    href="#products"
-                    className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
-                  >
-                    AI Products
-                  </Link>
-                  <Link
-                    href="#about"
-                    className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
-                  >
-                    About Us
-                  </Link>
-                  <Link
-                    href="#success"
-                    className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
-                  >
-                    Client Success Stories
-                  </Link>
-                  <Link
-                    href="#roadmap"
-                    className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
-                  >
-                    Road Map
-                  </Link>
-                  <Link
-                    href="#faq"
-                    className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
-                  >
-                    FAQ
-                  </Link>
-                  <Link
-                    href="https://app.firmos.ai/apps?id=3f717854-c530-470b-a56b-f53e82e296e7"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-[#FE7443] to-[#FE8F68] text-[#FFFFFF] px-6 py-3 rounded-full hover:from-[#FE8F68] hover:to-[#FE7443] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-semibold text-lg animate-pulse"
-                    style={{ animationDuration: '2.5s' }}
-                  >
-                    Subscribe Now!
-                  </Link>
-                </div>
-                <Button
-                  onClick={() => setIsModalOpen(true)}
-                  className="bg-[#FE7443] text-[#FFFFFF] rounded-full flex items-center gap-2 hover:bg-[#FE8F68] transition-all duration-300 transform hover:scale-105"
-                >
-                  <Calendar className="h-4 w-4" />
-                  Schedule a Demo
-                </Button>
-              </div>
-
-              {/* Mobile Menu Button */}
-              <button
-                className="md:hidden text-[#FFFFFF]"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
-                {isMenuOpen ? (
-                  <X className="h-6 w-6" />
-                ) : (
-                  <Menu className="h-6 w-6" />
-                )}
-              </button>
-            </div>
-
-            {/* Mobile Navigation */}
-            {isMenuOpen && (
-              <div className="md:hidden bg-[#323232]/95 backdrop-blur-sm p-4 absolute w-full left-0 rounded-b-xl">
-                <div className="flex flex-col space-y-4">
-                  <Link
-                    href="#"
-                    className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
-                  >
-                    Home
-                  </Link>
-                  <Link
-                    href="#products"
-                    className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
-                  >
-                    AI Products
-                  </Link>
-                  <Link
-                    href="#about"
-                    className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
-                  >
-                    About Us
-                  </Link>
-                  <Link
-                    href="#success"
-                    className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
-                  >
-                    Client Success Stories
-                  </Link>
-                  <Link
-                    href="#roadmap"
-                    className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
-                  >
-                    Road Map
-                  </Link>
-                  <Link
-                    href="#faq"
-                    className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
-                  >
-                    FAQ
-                  </Link>
-                  <Link
-                    href="https://app.firmos.ai/apps?id=3f717854-c530-470b-a56b-f53e82e296e7"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-[#FE7443] to-[#FE8F68] text-[#FFFFFF] px-4 py-2 rounded-full hover:from-[#FE8F68] hover:to-[#FE7443] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-semibold text-center animate-pulse"
-                    style={{ animationDuration: '2.5s' }}
-                  >
-                    Subscribe Now!
-                  </Link>
-                  <Button
-                    onClick={() => setIsModalOpen(true)}
-                    className="bg-[#FE7443] text-[#FFFFFF] w-full rounded-full flex items-center justify-center gap-2 hover:bg-[#FE8F68] transition-all duration-300 transform hover:scale-105"
-                  >
-                    <Calendar className="h-4 w-4" />
-                    Schedule a Demo
-                  </Button>
-                </div>
-              </div>
-            )}
-          </div>
-        </nav>
+        <NavigationBar
+          isScrolled={isScrolled}
+          setIsModalOpen={setIsModalOpen}
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+        />
 
         {/* Hero Section */}
         <section className="pt-32 pb-16 px-4">
