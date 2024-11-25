@@ -29,11 +29,11 @@ import {
 } from '@/content/landingPageContent';
 import TimelineSegment from '@/components/TimelineSegment';
 import NavigationBar from '@/components/NavigationBar';
+import HeroSection from '@/components/HeroSection';
 
 export function LandingPage() {
   const [activeVideo, setActiveVideo] = useState(0);
   const [activeClientVideo, setActiveClientVideo] = useState(0);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [openFAQItems, setOpenFAQItems] = useState<{ [key: string]: boolean }>(
@@ -89,26 +89,10 @@ export function LandingPage() {
         <NavigationBar
           isScrolled={isScrolled}
           setIsModalOpen={setIsModalOpen}
-          isMenuOpen={isMenuOpen}
-          setIsMenuOpen={setIsMenuOpen}
         />
 
         {/* Hero Section */}
-        <section className="pt-32 pb-16 px-4">
-          <div className="container mx-auto text-center">
-            <div className="bg-[#323232]/40 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-6xl font-bold text-[#FFFFFF] mb-6">
-                Strategic FirmOS Solutions
-              </h1>
-              <p className="text-lg md:text-xl text-[#CCCCCC] max-w-3xl mx-auto">
-                Elevate your accounting practice with our meticulously crafted
-                suite of professional tools. Select the optimal FirmOS package
-                to revolutionize your firm&apos;s efficiency, client engagement,
-                and growth potential.
-              </p>
-            </div>
-          </div>
-        </section>
+        <HeroSection />
 
         {/* Video Carousel Section */}
         <section className="py-16 px-4" id="products">

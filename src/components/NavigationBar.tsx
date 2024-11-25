@@ -2,19 +2,16 @@ import { Button } from '@/components/ui/button';
 import { Calendar, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 
 export default function NavigationBar({
   isScrolled,
   setIsModalOpen,
-  isMenuOpen,
-  setIsMenuOpen,
 }: {
   isScrolled: boolean;
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
-  isMenuOpen: boolean;
-  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
 }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#000000]/90 backdrop-blur-sm' : 'bg-transparent'} py-4`}
