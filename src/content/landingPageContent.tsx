@@ -199,7 +199,7 @@ export const clientVideos: ClientVideo[] = [
   },
 ];
 
-export const overviewItems = [
+export const overviewItems: OverviewItem[] = [
   {
     icon: Zap,
     title: 'Business Development',
