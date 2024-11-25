@@ -27,52 +27,7 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { faqList, products } from '@/content/landingPageContent';
-
-const clientVideos = [
-  {
-    name: 'Aaron Ready, CPA',
-    operations: 'The Non Profit CFO',
-    url: 'https://youtu.be/mSjAeEvvnf0',
-    overview:
-      'Transformed their operations with FirmOS, reducing administrative overwhelm and boosting efficiency. By streamlining workflows and leveraging cutting-edge technology, we saved the team valuable time, resolved recruitment challenges, and enabled a sharper focus on client services. The result: improved productivity, enhanced growth opportunities, and a modernized approach to business management, positioning them as a leader in their industry.',
-  },
-  {
-    name: 'Abir Seyed, CPA',
-    operations: 'Upcounting',
-    url: 'https://youtu.be/Hs8aNN9QIHY',
-    overview:
-      'Elevated their marketing efforts with FirmOS, leveraging our unique blend of accounting expertise and advanced marketing knowledge. By focusing on social media and blog content, we built a strong online presence aligned with their branding, saving them time and effort. This trust-driven partnership empowered them to connect with their target audience effectively, enhancing their brand visibility and establishing a competitive edge in their industry.',
-  },
-  {
-    name: 'Scott Amano, CPA',
-    operations: 'Amano FAS',
-    url: 'https://youtu.be/pJqq9M1pR74',
-    overview:
-      'Amano FAS harnessed the power of FirmOS to optimize their sustainable energy projects, leading to a 25% increase in energy efficiency and a 35% reduction in project costs. Our data-driven solutions enabled better resource management and predictive maintenance strategies.',
-  },
-  {
-    name: 'Imran Jiwa, CPA',
-    operations: 'LiftCPA',
-    url: 'https://youtu.be/1DSs0PUCAcA',
-    overview:
-      'LiftCPA utilized FirmOS to streamline their healthcare operations, resulting in a 20% improvement in patient care quality and a 15% reduction in administrative overhead. Our secure, HIPAA-compliant platform enhanced data management and facilitated better interdepartmental collaboration.',
-  },
-  {
-    name: 'Dominic Wong',
-    operations: 'Invoke Digital',
-    url: 'https://youtu.be/jnrde6jB0Jc',
-    overview:
-      'Invoke Digital optimized their international trade processes with FirmOS, achieving a 45% reduction in customs clearance times and a 60% improvement in supply chain visibility. Our global-ready solutions facilitated seamless cross-border transactions and real-time inventory management.',
-  },
-  {
-    name: 'Mathew Cohen',
-    operations: 'Incommon Projects',
-    url: 'https://youtu.be/G4AvCFjtQWA',
-    overview:
-      'Incommon Projects transformed their educational technology offerings using FirmOS, leading to a 55% increase in student engagement and a 40% improvement in learning outcomes. Our adaptive learning algorithms and analytics tools revolutionized personalized education delivery.',
-  },
-];
+import { faqList, products, clientVideos } from '@/content/landingPageContent';
 
 const overviewItems = [
   {
