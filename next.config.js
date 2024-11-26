@@ -3,11 +3,11 @@ const nextConfig = {
   headers: async () => {
     return [
       {
-        source: '/(.*)',
+        source: '/(.*)', // Apply these headers to all routes
         headers: [
           {
             key: 'X-Frame-Options',
-            value: '', // Ensure this value is properly set if needed
+            value: 'ALLOWALL', // Remove or set as needed based on your requirements
           },
           {
             key: 'X-Content-Type-Options',
@@ -16,6 +16,18 @@ const nextConfig = {
           {
             key: 'X-XSS-Protection',
             value: '1; mode=block',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: `
+              default-src 'self';
+              script-src 'self' 'unsafe-inline';
+              style-src 'self' 'unsafe-inline';
+              img-src 'self' https://hebbkx1anhila5yf.public.blob.vercel-storage.com;
+              frame-src 'self' https://www.youtube.com https://player.vimeo.com; // Allows YouTube and Vimeo if needed
+            `
+              .replace(/\n/g, '')
+              .trim(), // Removing newlines for compactness
           },
         ],
       },
