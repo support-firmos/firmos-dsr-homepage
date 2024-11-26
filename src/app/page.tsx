@@ -38,7 +38,6 @@ async function Content({ searchParams }: { searchParams: SearchParams }) {
         Let&apos;s get you started <br />
         <span className="font-semibold text-lg">
           {' '}
-          Jack
           {data.client ? data.client.givenName : data.company?.name}
         </span>
       </h1>
