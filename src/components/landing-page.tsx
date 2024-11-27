@@ -28,7 +28,6 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import Script from 'next/script';
 
 type FAQItem = {
   question: string;
@@ -70,7 +69,7 @@ const faqData: FAQCategory[] = [
         question:
           'How does FirmOS help with attracting and retaining high-value clients?',
         answer:
-          "FirmOS combines strategic goal-setting, targeted outreach, and personalized nurturing to attract and retain high-value clients. By aligning your firm's branding, generating awareness, and converting leads through tailored strategies, we ensure sustainable growth and client loyalty.",
+          'FirmOS combines strategic goal-setting, targeted outreach, and personalized nurturing to attract and retain high-value clients. By aligning your firm&apos;s branding, generating awareness, and converting leads through tailored strategies, we ensure sustainable growth and client loyalty.',
       },
     ],
   },
@@ -96,12 +95,12 @@ const faqData: FAQCategory[] = [
       {
         question: 'What sets FirmOS apart from other solutions?',
         answer:
-          "FirmOS is tailored for accounting firms, combining expert CPA guidance with custom automation. We streamline operations, generate qualified leads, and deliver data-driven results. A fully done-for-you service, you won't find anything like it.",
+          'FirmOS is tailored for accounting firms, combining expert CPA guidance with custom automation. We streamline operations, generate qualified leads, and deliver data-driven results. A fully done-for-you service, you won&apos;t find anything like it.',
       },
       {
         question: 'Do you offer a guarantee?',
         answer:
-          "FirmOS offers a 30-Day Satisfaction-Based Refund. If you're not satisfied with our service within the first 30 days, we'll refund your retainer, no questions asked.",
+          'FirmOS offers a 30-Day Satisfaction-Based Refund. If youapos;re not satisfied with our service within the first 30 days, we&apos;ll refund your retainer, no questions asked.',
       },
       {
         question:
@@ -117,100 +116,40 @@ const products = [
   {
     title: 'AI Talent Management',
     timeline: '30 Days',
-    keyFeatures: [
-      'AI Recruitment: Smart resume screening, candidate ranking, interview scheduling, and sentiment analysis for better talent matching.',
-      'Employee Development: Personalized learning paths, real-time feedback, and career planning to boost engagement and retention.',
-      'Workforce Optimization: Predictive workforce planning, task delegation, and performance analysis for maximum productivity.',
-      'Integrations: Compatible with leading HR platforms (e.g., BambooHR, Workday) and supports custom APIs.',
-    ],
-    benefits: [
-      'Automates repetitive tasks, saving time and resources.',
-      'Delivers actionable insights to enhance decision-making.',
-      'Improves hiring and employee experiences with tailored solutions.',
-      'Future-proofs workforce planning for evolving demands.',
-    ],
-    outcome:
-      'A scalable, data-driven platform delivering measurable improvements in recruitment efficiency, employee satisfaction, and productivity.',
+    description:
+      'Advanced AI-powered system for recruiting, employee development, and workforce optimization.',
     position: 'top',
     color: '#323232',
   },
   {
     title: 'AI Inbox Manager',
-    timeline: '45 Days',
-    keyFeatures: [
-      'Smart Prioritization: Automatically ranks emails based on urgency, sender importance, and content relevance.',
-      'Categorization: Organizes emails into intuitive folders (e.g., work, personal, promotions) using advanced AI tagging.',
-      'Automated Responses: Generates context-aware reply suggestions and handles routine emails autonomously.',
-      'Integrations: Works seamlessly with popular email platforms (e.g., Gmail, Outlook) and productivity tools.',
-    ],
-    benefits: [
-      'Saves time by automating email organization and responses.',
-      'Ensures important emails are addressed promptly.',
-      'Enhances productivity with streamlined email workflows.',
-      'Reduces email fatigue with intelligent prioritization.',
-    ],
-    outcome:
-      'A powerful email management solution that minimizes manual effort, improves response efficiency, and keeps inboxes effortlessly organized.',
+    timeline: '30 Days',
+    description:
+      'Smart email management system that prioritizes, categorizes, and automates responses.',
     position: 'bottom',
     color: '#666666',
   },
   {
     title: 'AI Content Generator',
-    timeline: '60 Days',
-    keyFeatures: [
-      'Automated Content Creation: Generates high-quality text for blogs, social media, ads, and documents tailored to target audiences.',
-      'Customizable Templates: Offers pre-built layouts for various content types, including marketing campaigns and product descriptions.',
-      'Language Adaptability: Supports multiple languages and tones, from professional to conversational.',
-      'AI-Driven Insights: Provides keyword suggestions and SEO optimization for maximum reach.',
-    ],
-    benefits: [
-      'Saves time by automating content production.',
-      'Ensures consistent branding with customizable templates.',
-      'Boosts engagement through tailored, audience-focused material.',
-      'Enhances SEO efforts with optimized keyword integration.',
-    ],
-    outcome:
-      'A versatile tool empowering businesses to produce impactful content faster, streamline marketing efforts, and increase audience engagement.',
+    timeline: '30 Days',
+    description:
+      'Automated content creation tool for marketing materials, social media, and documentation.',
     position: 'top',
     color: '#999999',
   },
   {
     title: 'AI Marketing Analytics',
-    timeline: '75 Days',
-    keyFeatures: [
-      'Campaign Performance Tracking: Monitors key metrics (e.g., ROI, CTR, conversion rates) across multiple channels in real time.',
-      'Predictive Analytics: Uses AI to forecast campaign outcomes and recommend adjustments for better results.',
-      'Customer Insights: Analyzes audience behavior, demographics, and preferences to refine targeting strategies.',
-      'Dashboard Integration: Centralized reporting with customizable visualizations for actionable insights.',
-    ],
-    benefits: [
-      'Maximizes campaign efficiency with data-driven optimizations.',
-      'Enhances decision-making through real-time and predictive insights.',
-      'Improves audience targeting and segmentation.',
-      'Saves time with automated reporting and intuitive dashboards.',
-    ],
-    outcome:
-      'A stable analytics platform that empowers businesses to refine marketing strategies, boost campaign ROI, and drive measurable growth.',
+    timeline: '30 Days',
+    description:
+      'Comprehensive analytics platform for tracking and optimizing marketing campaigns.',
     position: 'bottom',
     color: '#323232',
   },
   {
     title: 'AI Invoice & Expenses',
-    timeline: '90 Days',
-    keyFeatures: [
-      'Automated Invoice Management: Generates, sends, and tracks invoices with minimal manual input.',
-      'Expense Tracking: Categorizes and monitors expenses in real time, with visual summaries.',
-      'Financial Reporting: Creates detailed reports on cash flow, budgets, and profitability.',
-      'Integrations: Syncs with accounting tools (e.g., QuickBooks, Xero) and payment platforms.',
-    ],
-    benefits: [
-      'Saves time by automating financial workflows.',
-      'Reduces errors in invoicing and expense tracking.',
-      'Provides clear financial insights to support better decision-making.',
-      'Simplifies tax preparation with organized financial data.',
-    ],
-    outcome:
-      'A solution for managing invoices, monitoring expenses, and delivering actionable financial insights, enhancing business efficiency and accuracy.',
+    timeline: '30 Days',
+    description:
+      'Automated system for managing invoices, track expenses, and financial reporting.',
     position: 'top',
     color: '#FFFFFF',
   },
@@ -220,44 +159,44 @@ const clientVideos = [
   {
     name: 'Aaron Ready, CPA',
     operations: 'The Non Profit CFO',
-    url: 'https://www.youtube.com/embed/mSjAeEvvnf0',
+    url: 'https://youtu.be/mSjAeEvvnf0',
     overview:
-      'The Non-Profit CFO struggled with overwhelming administrative tasks, inefficient workflows, and challenges in finding qualified talent, leaving little time for growth or marketing. FirmOS streamlined operations, implemented modern technology, and provided expert recruitment support, freeing up time to focus on strategic priorities. This partnership reduced stress, improved efficiency, and positioned the firm for sustainable growth.',
+      'Transformed their operations with FirmOS, reducing administrative overwhelm and boosting efficiency. By streamlining workflows and leveraging cutting-edge technology, we saved the team valuable time, resolved recruitment challenges, and enabled a sharper focus on client services. The result: improved productivity, enhanced growth opportunities, and a modernized approach to business management, positioning them as a leader in their industry.',
   },
   {
     name: 'Abir Seyed, CPA',
     operations: 'Upcounting',
-    url: 'https://www.youtube.com/embed/Hs8aNN9QIHY',
+    url: 'https://youtu.be/Hs8aNN9QIHY',
     overview:
-      "UpCounting partnered with FirmOS to overcome challenges in social media management and brand building, benefiting from FirmOS's unique blend of accounting expertise and marketing knowledge. By creating on-brand, client-focused content and managing social media profiles, FirmOS allowed UpCounting to build trust, enhance engagement, and free up time to focus on core business tasks. This partnership significantly improved their marketing efforts, making FirmOS a trusted resource for accounting firms.",
+      'Elevated their marketing efforts with FirmOS, leveraging our unique blend of accounting expertise and advanced marketing knowledge. By focusing on social media and blog content, we built a strong online presence aligned with their branding, saving them time and effort. This trust-driven partnership empowered them to connect with their target audience effectively, enhancing their brand visibility and establishing a competitive edge in their industry.',
   },
   {
     name: 'Scott Amano, CPA',
     operations: 'Amano FAS',
-    url: 'https://www.youtube.com/embed/pJqq9M1pR74',
+    url: 'https://youtu.be/pJqq9M1pR74',
     overview:
-      "Scott Amano, founder of Amano Financial Advisory Services, partnered with FirmOS to enhance his website's performance and user experience. FirmOS provided ongoing monitoring, analysis, and proactive optimization, resulting in increased website traffic, improved user retention, and positive client feedback. Their industry expertise and tailored approach addressed Scott's unique challenges, making FirmOS a trusted and effective marketing partner for accounting and financial professionals.",
+      'Amano FAS harnessed the power of FirmOS to optimize their sustainable energy projects, leading to a 25% increase in energy efficiency and a 35% reduction in project costs. Our data-driven solutions enabled better resource management and predictive maintenance strategies.',
   },
   {
     name: 'Imran Jiwa, CPA',
     operations: 'LiftCPA',
-    url: 'https://www.youtube.com/embed/1DSs0PUCAcA',
+    url: 'https://youtu.be/1DSs0PUCAcA',
     overview:
-      'LiftCPA partnered with FirmOS to address limited online visibility and lack of social media presence. Through targeted SEO strategies and personalized support, FirmOS significantly improved search rankings and lead generation, delivering a strong return on investment within just four months. Their expertise and collaborative approach made it easy to position LiftCPA for long-term success in attracting qualified leads.',
+      'LiftCPA utilized FirmOS to streamline their healthcare operations, resulting in a 20% improvement in patient care quality and a 15% reduction in administrative overhead. Our secure, HIPAA-compliant platform enhanced data management and facilitated better interdepartmental collaboration.',
   },
   {
     name: 'Dominic Wong',
     operations: 'Invoke Digital',
-    url: 'https://www.youtube.com/embed/jnrde6jB0Jc',
+    url: 'https://youtu.be/jnrde6jB0Jc',
     overview:
-      "Dominic, Managing Director of Invoke Digital, partnered with FirmOS to optimize processes and drive lead generation for his tech business. Through automation and a tailored strategy, FirmOS streamlined operations and enhanced sales efforts, resulting in significant growth, including $30K in additional MRR. Their responsive and collaborative team earned Dominic's trust, making FirmOS a valuable partner for tech-focused businesses.",
+      'Invoke Digital optimized their international trade processes with FirmOS, achieving a 45% reduction in customs clearance times and a 60% improvement in supply chain visibility. Our global-ready solutions facilitated seamless cross-border transactions and real-time inventory management.',
   },
   {
     name: 'Mathew Cohen',
     operations: 'Incommon Projects',
-    url: 'https://www.youtube.com/embed/G4AvCFjtQWA',
+    url: 'https://youtu.be/G4AvCFjtQWA',
     overview:
-      "FirmOS collaborated with Incommon Project to deliver a high-quality website with impressive speed and efficiency. Rodney and Martin's proactive approach, responsiveness, and ongoing support ensured a seamless experience, addressing challenges and implementing improvements even post-launch. The result was a flawless website at competitive pricing, making FirmOS a highly recommended partner for professional website design.",
+      'Incommon Projects transformed their educational technology offerings using FirmOS, leading to a 55% increase in student engagement and a 40% improvement in learning outcomes. Our adaptive learning algorithms and analytics tools revolutionized personalized education delivery.',
   },
 ];
 
@@ -477,13 +416,13 @@ export function LandingPage() {
                     Subscribe Now!
                   </Link>
                 </div>
-                {/* <Button
+                <Button
                   onClick={() => setIsModalOpen(true)}
                   className="bg-[#FE7443] text-[#FFFFFF] rounded-full flex items-center gap-2 hover:bg-[#FE8F68] transition-all duration-300 transform hover:scale-105"
                 >
                   <Calendar className="h-4 w-4" />
                   Schedule a Demo
-                </Button> */}
+                </Button>
               </div>
 
               {/* Mobile Menu Button */}
@@ -666,10 +605,10 @@ export function LandingPage() {
                 <p className="text-[#E5E5E5] leading-relaxed">
                   FirmOS is the all-in-one platform designed exclusively for
                   fractional CFOs and accounting firms. With a focus on Business
-                  Development, Talent, Operations, and Management efficiency, we
-                  provide innovative tools to streamline processes, attract
-                  high-value clients, and empower your team—all while ensuring
-                  financial stability.
+                  Development, Talent, Operations, and Finance, we provide
+                  innovative tools to streamline processes, attract high-value
+                  clients, and empower your team—all while ensuring financial
+                  stability.
                 </p>
               </motion.div>
               <motion.div
@@ -681,7 +620,7 @@ export function LandingPage() {
                 <p className="text-[#E5E5E5] leading-relaxed">
                   Our mission is to help accounting firms overcome growth
                   challenges and scale sustainably with AI-powered automation
-                  and strategic systems. Whether you&apos;re looking to improve
+                  and strategic systems. Whether youapos;re looking to improve
                   workflow efficiency, retain top talent, or build a consistent
                   client pipeline, FirmOS is here to transform the way you work
                   and grow your business.
@@ -837,7 +776,6 @@ export function LandingPage() {
             </motion.h2>
             <div className="relative">
               <div className="flex flex-col md:flex-row">
-                {/* Product Navigation */}
                 <div className="md:w-1/4 mb-8 md:mb-0">
                   {products.map((product, index) => (
                     <motion.div
@@ -857,66 +795,29 @@ export function LandingPage() {
                     </motion.div>
                   ))}
                 </div>
-
-                {/* Product Details */}
                 <div className="md:w-3/4 md:pl-8">
-                  {products[selectedRoadmapIndex] && (
-                    <motion.div
-                      key={selectedRoadmapIndex}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5 }}
-                      className="bg-gray-800 p-6 rounded-lg"
-                    >
-                      <h3 className="text-2xl font-bold mb-4">
-                        {products[selectedRoadmapIndex]?.title}
-                      </h3>
-
-                      {/* Key Features */}
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold mb-2">
-                          Key Features:
-                        </h4>
-                        <ul className="list-disc list-inside space-y-2 text-gray-300">
-                          {products[selectedRoadmapIndex]?.keyFeatures?.map(
-                            (feature, i) => <li key={i}>{feature}</li>,
-                          )}
-                        </ul>
-                      </div>
-
-                      {/* Benefits */}
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold mb-2">
-                          Benefits:
-                        </h4>
-                        <ul className="list-disc list-inside space-y-2 text-gray-300">
-                          {products[selectedRoadmapIndex]?.benefits?.map(
-                            (benefit, i) => <li key={i}>{benefit}</li>,
-                          )}
-                        </ul>
-                      </div>
-
-                      {/* Outcome */}
-                      <div className="mb-4">
-                        <h4 className="text-lg font-semibold mb-2">Outcome:</h4>
-                        <p className="text-gray-300">
-                          {products[selectedRoadmapIndex]?.outcome}
-                        </p>
-                      </div>
-
-                      {/* Timeline */}
-                      <div className="flex items-center">
-                        <Clock className="w-5 h-5 mr-2 text-[#FE7443]" />
-                        <span className="text-sm text-gray-400">
-                          Timeline: {products[selectedRoadmapIndex]?.timeline}
-                        </span>
-                      </div>
-                    </motion.div>
-                  )}
+                  <motion.div
+                    key={selectedRoadmapIndex}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-gray-800 p-6 rounded-lg"
+                  >
+                    <h3 className="text-2xl font-bold mb-4">
+                      {products[selectedRoadmapIndex].title}
+                    </h3>
+                    <p className="text-gray-300 mb-4">
+                      {products[selectedRoadmapIndex].description}
+                    </p>
+                    <div className="flex items-center">
+                      <Clock className="w-5 h-5 mr-2 text-[#FE7443]" />
+                      <span className="text-sm text-gray-400">
+                        Timeline: {products[selectedRoadmapIndex].timeline}
+                      </span>
+                    </div>
+                  </motion.div>
                 </div>
               </div>
-
-              {/* Vertical Divider */}
               <div className="absolute left-1/4 top-0 bottom-0 w-px bg-gray-700 hidden md:block"></div>
             </div>
           </div>
@@ -927,115 +828,90 @@ export function LandingPage() {
           className="py-16 px-4 bg-gradient-to-b from-[#323232] to-[#000000]"
           id="faq"
         >
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#FE7443] mb-12 text-center">
+          <div className="container mx-auto">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-4xl md:text-5xl font-bold text-[#FFFFFF] mb-12 text-center"
+            >
               Frequently Asked Questions
-            </h2>
+            </motion.h2>
 
-            <div className="relative mb-8">
-              <input
-                type="text"
-                placeholder="Search FAQ..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full p-4 pr-12 rounded-full border-2 border-[#FE7443] bg-transparent text-[#FFFFFF] placeholder-[#CCCCCC] focus:outline-none focus:ring-2 focus:ring-[#FE7443] focus:border-transparent"
-              />
-              <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-[#FE7443]">
-                <Search size={20} />
+            <div className="max-w-3xl mx-auto mb-8">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search FAQ..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full px-4 py-2 bg-[#666666]/40 backdrop-blur-sm text-[#FFFFFF] rounded-full focus:outline-none focus:ring-2 focus:ring-[#FE7443]"
+                />
+                <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#CCCCCC]" />
               </div>
             </div>
 
             {hasResults ? (
               filteredFAQ.map((category, categoryIndex) => (
-                <div key={categoryIndex} className="mb-12">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-[#FE7443] p-3 rounded-full mr-4">
-                      {category.icon}
-                    </div>
-                    <h3 className="text-3xl font-semibold text-[#FE7443]">
-                      {category.category}
-                    </h3>
-                  </div>
-
-                  <div className="space-y-4">
-                    {category.items.map((item, itemIndex) => {
-                      const isOpen =
-                        openFAQItems[`${categoryIndex}-${itemIndex}`];
-                      return (
-                        <div
-                          key={itemIndex}
-                          className="bg-[#1A1A1A] rounded-lg overflow-hidden"
-                        >
-                          <button
-                            onClick={() =>
-                              toggleFAQItem(categoryIndex, itemIndex)
-                            }
-                            className="w-full text-left p-6 flex justify-between items-center hover:bg-[#323232] transition-colors duration-300"
-                          >
-                            <span className="text-lg font-medium text-[#FFFFFF]">
-                              {item.question}
-                            </span>
-                            <ChevronDown
-                              size={24}
-                              className={`text-[#FE7443] transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-                            />
-                          </button>
-                          <div
-                            className={`overflow-hidden transition-all duration-300 ${
-                              isOpen
-                                ? 'max-h-96 opacity-100'
-                                : 'max-h-0 opacity-0'
-                            }`}
-                          >
-                            <p className="p-6 text-[#CCCCCC]">{item.answer}</p>
-                          </div>
+                <motion.div
+                  key={categoryIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+                  className="mb-8"
+                >
+                  <h3 className="text-2xl font-bold text-[#FFFFFF] mb-4 flex items-center">
+                    {category.icon}
+                    <span className="ml-2">{category.category}</span>
+                  </h3>
+                  {category.items.map((item, itemIndex) => (
+                    <div key={itemIndex} className="mb-4">
+                      <button
+                        onClick={() => toggleFAQItem(categoryIndex, itemIndex)}
+                        className="flex justify-between items-center w-full text-left p-4 bg-[#666666]/40 backdrop-blur-sm rounded-lg hover:bg-[#999999]/40 transition-all duration-300"
+                      >
+                        <span className="text-[#FFFFFF] font-semibold">
+                          {item.question}
+                        </span>
+                        <ChevronDown
+                          className={`w-5 h-5 text-[#FFFFFF] transform transition-transform duration-300 ${
+                            openFAQItems[`${categoryIndex}-${itemIndex}`]
+                              ? 'rotate-180'
+                              : ''
+                          }`}
+                        />
+                      </button>
+                      {openFAQItems[`${categoryIndex}-${itemIndex}`] && (
+                        <div className="mt-2 p-4 bg-[#323232]/40 backdrop-blur-sm rounded-lg">
+                          <p className="text-[#CCCCCC]">{item.answer}</p>
                         </div>
-                      );
-                    })}
-                  </div>
-                </div>
+                      )}
+                    </div>
+                  ))}
+                </motion.div>
               ))
             ) : (
-              <div className="text-center py-8">
-                <p className="text-xl text-[#CCCCCC] mb-4">
-                  No results found. Maybe ask that question to us!
-                </p>
-                <Link
-                  href="https://app.firmos.ai/messaging"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-gradient-to-r from-[#FE7443] to-[#FE8F68] text-[#FFFFFF] px-6 py-3 rounded-full hover:from-[#FE8F68] hover:to-[#FE7443] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
-                >
-                  Ask a Question
-                </Link>
-              </div>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="text-center text-[#CCCCCC]"
+              >
+                No results found. Please try a different search term.
+              </motion.p>
             )}
           </div>
         </section>
 
+        {/* Calendar Modal */}
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-          <DialogContent className="bg-[#323232] text-[#FFFFFF] max-w-4xl mx-auto">
+          <DialogContent className="bg-[#323232] text-[#FFFFFF]">
             <DialogHeader>
-              <DialogTitle className="text-center">Schedule a Call</DialogTitle>
+              <DialogTitle>Schedule a Call</DialogTitle>
             </DialogHeader>
             <div className="p-6">
-              {/* GHL Calendar Integration */}
-              <div className="bg-[#666666]/40 p-8 rounded-xl flex justify-center">
-                <iframe
-                  src="https://api.leadconnectorhq.com/widget/booking/ZX9gXdqbYw2733hQz7Pw"
-                  style={{
-                    width: '100%',
-                    maxWidth: '800px',
-                    height: '500px',
-                    border: 'none',
-                    overflow: 'hidden',
-                  }}
-                  id="5jNZSPptxio5sZEfelgA_1732623829501"
-                ></iframe>
-              </div>
-
-              {/* Close Button */}
-              <div className="mt-4 text-center">
+              <div className="bg-[#666666]/40 p-8 rounded-xl text-center">
+                <p className="mb-4">Calendar integration placeholder</p>
                 <Button
                   onClick={() => setIsModalOpen(false)}
                   className="bg-gradient-to-r from-[#FE7443] to-[#FE8F68] text-[#FFFFFF] hover:from-[#FE8F68] hover:to-[#FE7443] rounded-full transition-all duration-300 transform hover:scale-105"
