@@ -11,7 +11,7 @@ const Footer = () => {
           Contact Us
         </h3>
         <div className="mb-7 text-lg leading-relaxed">
-          <p>Contact Number: (123) 456-7890</p>
+          {/* <p>Contact Number: (123) 456-7890</p> */}
           <p>
             Email:{' '}
             <Link
@@ -62,12 +62,12 @@ const Footer = () => {
           >
             Services
           </Link>
-          <Link
+          {/* <Link
             href="#"
             className="block text-gray-200 hover:text-orange-500 mb-2"
           >
             Blog
-          </Link>
+          </Link> */}
           <Link
             href="mailto:contact@firmos.ai"
             className="block text-gray-200 hover:text-orange-500"
