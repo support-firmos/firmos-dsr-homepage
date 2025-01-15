@@ -1,21 +1,22 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  headers: async () => {
+  async headers() {
     return [
       {
-        source: '/(.*)',
+        source: '/(.*)', // Apply these headers to all routes
         headers: [
           {
             key: 'X-Frame-Options',
-            value: '', // Ensure this value is properly set if needed
+            value: 'SAMEORIGIN', // Prevent clickjacking by allowing only same-origin content to be framed
           },
           {
             key: 'X-Content-Type-Options',
-            value: 'nosniff',
+            value: 'nosniff', // Prevent MIME type sniffing
           },
           {
             key: 'X-XSS-Protection',
-            value: '1; mode=block',
+            value: '1; mode=block', // Enable XSS filtering
           },
         ],
       },
@@ -25,8 +26,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'hebbkx1anhila5yf.public.blob.vercel-storage.com', // Your image domain
-        pathname: '/**', // Adjust the path if necessary
+        hostname: 'hebbkx1anhila5yf.public.blob.vercel-storage.com',
+        pathname: '/**',
       },
     ],
   },
