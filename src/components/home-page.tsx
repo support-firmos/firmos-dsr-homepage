@@ -244,6 +244,18 @@ const products = [
 
 const clientVideos = [
   {
+    name: 'Stewart Robinson',
+    operations: 'Biotech CPA',
+    url: 'https://www.youtube.com/embed/lk679d1rAZA?si=RXUQyZzr-p3N0shW',
+    overview:
+      'Biotech CPA faced challenges in client acquisition and workflow management. With FirmOS, they unlocked remarkable efficiency and revenue potential, including a 400% increase in search impressions and $864K annual ROI by automating outreach and focusing on high-value clients.',
+    keywords: [
+      { text: '400% More Search Impressions', icon: TrendingUp },
+      { text: '$864K Annual ROI', icon: BarChart },
+      { text: 'Automated Outreach', icon: Zap },
+    ],
+  },
+  {
     name: 'Aaron Ready, CPA',
     operations: 'The Non Profit CFO',
     url: 'https://youtube.com/embed/mSjAeEvvnf0',
