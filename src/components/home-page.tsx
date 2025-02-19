@@ -75,7 +75,7 @@ const faqData: FAQCategory[] = [
         question:
           'How does FirmOS help with attracting and retaining high-value clients?',
         answer:
-          'FirmOS combines strategic goal-setting, targeted outreach, and personalized nurturing to attract and retain high-value clients. By aligning your firm&apos;s branding, generating awareness, and converting leads through tailored strategies, we ensure sustainable growth and client loyalty.',
+          "FirmOS combines strategic goal-setting, targeted outreach, and personalized nurturing to attract and retain high-value clients. By aligning your firm's branding, generating awareness, and converting leads through tailored strategies, we ensure sustainable growth and client loyalty.",
       },
     ],
   },
@@ -101,12 +101,12 @@ const faqData: FAQCategory[] = [
       {
         question: 'What sets FirmOS apart from other solutions?',
         answer:
-          'FirmOS is tailored for accounting firms, combining expert CPA guidance with custom automation. We streamline operations, generate qualified leads, and deliver data-driven results. A fully done-for-you service, you won&apos;t find anything like it.',
+          "FirmOS is tailored for accounting firms, combining expert CPA guidance with custom automation. We streamline operations, generate qualified leads, and deliver data-driven results. A fully done-for-you service, you won't find anything like it.",
       },
       {
         question: 'Do you offer a guarantee?',
         answer:
-          'FirmOS offers a 30-Day Satisfaction-Based Refund. If youapos;re not satisfied with our service within the first 30 days, we&apos;ll refund your retainer, no questions asked.',
+          "FirmOS offers a 30-Day Satisfaction-Based Refund. If you're not satisfied with our service within the first 30 days, we'll refund your retainer, no questions asked.",
       },
       {
         question:
@@ -542,7 +542,7 @@ export function HomePage() {
                     href="https://app.firmos.ai/apps?id=3f717854-c530-470b-a56b-f53e82e296e7"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-[#FE7443] to-[#FE8F68] text-[#FFFFFF] px-6 py-3 rounded-full hover:from-[#FE8F68] hover:to-[#FE7443] transition-all duration-300 shadow-lg hover:shadow-xl font-semibold text-lg pulse-shine-animation delay-animation"
+                    className="bg-secondary/90 text-primary px-6 py-3 rounded-[10px] hover:bg-secondary transition-all duration-300 shadow-lg hover:shadow-xl font-semibold text-lg pulse-shine-animation delay-animation"
                   >
                     Subscribe Now!
                   </Link>
@@ -674,9 +674,9 @@ export function HomePage() {
                     onClick={() => setActiveVideo(index)}
                     className={`text-left w-full h-16 ${
                       activeVideo === index
-                        ? 'bg-gradient-to-r from-[#FE7443] to-[#FE8F68]'
-                        : 'bg-[#323232]/60'
-                    } text-[#FFFFFF] rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-between px-4 py-3`}
+                        ? 'bg-secondary text-secondary-foreground'
+                        : 'bg-[#323232]/60 text-primary-foreground'
+                    } rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-between px-4 py-3`}
                   >
                     <div className="flex items-center">
                       <span className="text-sm font-semibold flex-1 whitespace-normal md:block hidden">
@@ -732,7 +732,7 @@ export function HomePage() {
                     href="https://app.firmos.ai/apps?id=3f717854-c530-470b-a56b-f53e82e296e7"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-[#FE7443] to-[#FE8F68] text-[#FFFFFF] px-6 py-3 rounded-full hover:from-[#FE8F68] hover:to-[#FE7443] transition-all duration-300 transform hover:scale-105 text-center font-semibold shadow-lg hover:shadow-xl"
+                    className="bg-secondary text-secondary-foreground px-6 py-3 rounded-full hover:from-[#FE8F68] hover:to-[#FE7443] transition-all duration-300 transform hover:scale-105 text-center font-semibold shadow-lg hover:shadow-xl"
                   >
                     Get it Now!
                   </Link>
@@ -786,7 +786,7 @@ export function HomePage() {
                 <p className="text-[#E5E5E5] leading-relaxed">
                   Our mission is to help accounting firms overcome growth
                   challenges and scale sustainably with AI-powered automation
-                  and strategic systems. Whether youapos;re looking to improve
+                  and strategic systems. Whether you&apos;re looking to improve
                   workflow efficiency, retain top talent, or build a consistent
                   client pipeline, FirmOS is here to transform the way you work
                   and grow your business.
@@ -802,7 +802,7 @@ export function HomePage() {
                   transition={{ duration: 0.8, delay: 0.2 * (index + 3) }}
                   className="bg-[#666666]/40 backdrop-blur-sm rounded-xl p-6 hover:bg-[#999999]/40 transition-all duration-300"
                 >
-                  <item.icon className="w-12 h-12 text-[#FE7443] mb-4" />
+                  <item.icon className="w-12 h-12 text-icon mb-4" />
                   <h3 className="text-xl font-semibold text-[#FFFFFF] mb-2">
                     {item.title}
                   </h3>
@@ -815,7 +815,7 @@ export function HomePage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="bg-[#666666]/40 backdrop-blur-sm rounded-xl p-6 hover:bg-[#999999]/40 transition-all duration-300"
               >
-                <Clipboard className="w-12 h-12 text-[#FE7443] mb-4" />
+                <Clipboard className="w-12 h-12 text-icon mb-4" />
                 <h3 className="text-xl font-semibold text-[#FFFFFF] mb-2">
                   Strategic Guidance
                 </h3>
@@ -907,7 +907,7 @@ export function HomePage() {
                     onClick={() => setActiveClientVideo(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       index === activeClientVideo
-                        ? 'bg-[#FE7443] w-6'
+                        ? 'bg-icon w-6'
                         : 'bg-[#666666] hover:bg-[#999999]'
                     }`}
                     aria-label={`Go to video ${index + 1}`}
@@ -951,9 +951,9 @@ export function HomePage() {
                         (keyword, index) => (
                           <div
                             key={index}
-                            className="flex items-center bg-[#FE7443] text-white text-base py-4 px-5 rounded-lg transition-all duration-300 hover:bg-[#FE8F68] shadow-lg shadow-[#323232]/20 w-fit"
+                            className="flex items-center bg-secondary/10 border-2 border-border text-white text-base py-4 px-5 rounded-lg transition-all duration-300 hover:bg-secondary/20 shadow-lg shadow-[#323232]/20 w-fit"
                           >
-                            <keyword.icon className="w-6 h-6 mr-4 flex-shrink-0" />
+                            <keyword.icon className="w-6 h-6 mr-4 flex-shrink-0 text-icon" />
                             <span className="font-medium">{keyword.text}</span>
                           </div>
                         ),
@@ -991,8 +991,8 @@ export function HomePage() {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className={`mb-4 p-4 rounded-lg cursor-pointer transition-all duration-300 ${
                         selectedRoadmapIndex === index
-                          ? 'bg-[#FE7443] text-white'
-                          : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                          ? 'bg-border border-2 border-border text-white'
+                          : 'bg-primary text-gray-300 hover:bg-border hover:border-2 hover:border-border'
                       }`}
                       onClick={() => setSelectedRoadmapIndex(index)}
                     >
@@ -1009,7 +1009,7 @@ export function HomePage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
-                      className="bg-gray-800 p-6 rounded-lg"
+                      className="bg-secondary/10 p-6 rounded-lg"
                     >
                       <h3 className="text-2xl font-bold mb-4">
                         {products[selectedRoadmapIndex]?.title}
@@ -1058,7 +1058,7 @@ export function HomePage() {
 
                       {/* Timeline */}
                       <div className="flex items-center">
-                        <Clock className="w-5 h-5 mr-2 text-[#FE7443]" />
+                        <Clock className="w-5 h-5 mr-2 text-icon" />
                         <span className="text-sm text-gray-400">
                           Timeline: {products[selectedRoadmapIndex]?.timeline}
                         </span>
@@ -1079,7 +1079,7 @@ export function HomePage() {
           id="faq"
         >
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#FE7443] mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-medium text-primary-foreground mb-12 text-center">
               Frequently Asked Questions
             </h2>
 
@@ -1089,9 +1089,9 @@ export function HomePage() {
                 placeholder="Search FAQ..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full p-4 pr-12 rounded-full border-2 border-[#FE7443] bg-transparent text-[#FFFFFF] placeholder-[#CCCCCC] focus:outline-none focus:ring-2 focus:ring-[#FE7443] focus:border-transparent"
+                className="w-full p-4 pr-12 rounded-full border-2 border-border bg-transparent text-[#FFFFFF] placeholder-[#CCCCCC] focus:outline-none focus:ring-2 focus:ring-border focus:border-transparent"
               />
-              <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-[#FE7443]">
+              <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-icon">
                 <Search size={20} />
               </div>
             </div>
@@ -1100,10 +1100,10 @@ export function HomePage() {
               filteredFAQ.map((category, categoryIndex) => (
                 <div key={categoryIndex} className="mb-12">
                   <div className="flex items-center mb-6">
-                    <div className="bg-[#FE7443] p-3 rounded-full mr-4">
+                    <div className="bg-secondary/10 text-icon p-3 rounded-full mr-4">
                       {category.icon}
                     </div>
-                    <h3 className="text-3xl font-semibold text-[#FE7443]">
+                    <h3 className="text-3xl font-semibold text-primary-foreground">
                       {category.category}
                     </h3>
                   </div>
@@ -1128,7 +1128,7 @@ export function HomePage() {
                             </span>
                             <ChevronDown
                               size={24}
-                              className={`text-[#FE7443] transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                              className={`text-icon transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
                             />
                           </button>
                           <div
