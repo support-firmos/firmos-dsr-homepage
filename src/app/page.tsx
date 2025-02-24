@@ -39,7 +39,7 @@ async function Content({ searchParams }: { searchParams: SearchParams }) {
     md:top-[23%] md:left-5 md:transform md:-translate-x-0 // Adjust for medium and larger screens
   "
       >
-        Let&apos;s get you started <br />
+        Hello and Welcome, <br />
         <span className="font-semibold text-lg">
           {data.client ? data.client.givenName : data.company?.name}
         </span>

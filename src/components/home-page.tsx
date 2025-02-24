@@ -10,23 +10,14 @@ import {
 } from '@/components/ui/dialog';
 import { Card, CardContent } from '@/components/ui/card';
 import {
-  Calendar,
   ChevronRight,
-  ChevronLeft,
   Menu,
   X,
-  ArrowRight,
   Zap,
   Users,
   BarChart3,
   Clipboard,
-  PlayCircle,
-  Award,
-  BarChart,
-  TrendingUp,
-  Target,
   Search,
-  ThumbsUp,
   Clock,
   ChevronDown,
 } from 'lucide-react';
@@ -242,93 +233,6 @@ const products = [
   },
 ];
 
-const clientVideos = [
-  {
-    name: 'Stewart Robinson',
-    operations: 'Biotech CPA',
-    url: 'https://www.youtube.com/embed/lk679d1rAZA?si=RXUQyZzr-p3N0shW',
-    overview:
-      'Biotech CPA faced challenges in client acquisition and workflow management. With FirmOS, they unlocked remarkable efficiency and revenue potential, including a 400% increase in search impressions and $864K annual ROI by automating outreach and focusing on high-value clients.',
-    keywords: [
-      { text: '400% More Search Impressions', icon: TrendingUp },
-      { text: '$864K Annual ROI', icon: BarChart },
-      { text: 'Automated Outreach', icon: Zap },
-    ],
-  },
-  {
-    name: 'Aaron Ready, CPA',
-    operations: 'The Non Profit CFO',
-    url: 'https://youtube.com/embed/mSjAeEvvnf0',
-    overview:
-      'The Non-Profit CFO struggled with overwhelming administrative tasks, inefficient workflows, and challenges in finding qualified talent, leaving little time for growth or marketing. FirmOS streamlined operations, implemented modern technology, and provided expert recruitment support, freeing up time to focus on strategic priorities. This partnership reduced stress, improved efficiency, and positioned the firm for sustainable growth.',
-    keywords: [
-      { text: 'Streamlined Operations', icon: BarChart },
-      { text: 'Expert Recruitment Support', icon: Users },
-      { text: 'Sustainable Growth', icon: TrendingUp },
-    ],
-  },
-  {
-    name: 'Abir Seyed, CPA',
-    operations: 'Upcounting',
-    url: 'https://youtube.com/embed/Hs8aNN9QIHY',
-    overview:
-      "UpCounting partnered with FirmOS to overcome challenges in social media management and brand building, benefiting from FirmOS's unique blend of accounting expertise and marketing knowledge. By creating on-brand, client-focused content and managing social media profiles, FirmOS allowed UpCounting to build trust, enhance engagement, and free up time to focus on core business tasks. This partnership significantly improved their marketing efforts, making FirmOS a trusted resource for accounting firms.",
-    keywords: [
-      { text: 'On-Brand, Client-Focused Content', icon: Target },
-      { text: 'Enhanced Engagement', icon: Users },
-      { text: 'Trusted Resource for Accounting Firms', icon: Award },
-    ],
-  },
-  {
-    name: 'Scott Amano, CPA',
-    operations: 'Amano FAS',
-    url: 'https://youtube.com/embed/pJqq9M1pR74',
-    overview:
-      "Scott Amano, founder of Amano Financial Advisory Services, partnered with FirmOS to enhance his website's performance and user experience. FirmOS provided ongoing monitoring, analysis, and proactive optimization, resulting in increased website traffic, improved user retention, and positive client feedback. Their industry expertise and tailored approach addressed Scott's unique challenges, making FirmOS a trusted and effective marketing partner for accounting and financial professionals.",
-    keywords: [
-      { text: 'Increased Website Traffic', icon: TrendingUp },
-      { text: 'Improved User Retention', icon: Users },
-      { text: 'Trusted Marketing Partner', icon: Award },
-    ],
-  },
-  {
-    name: 'Imran Jiwa, CPA',
-    operations: 'LiftCPA',
-    url: 'https://youtube.com/embed/1DSs0PUCAcA',
-    overview:
-      'LiftCPA partnered with FirmOS to address limited online visibility and lack of social media presence. Through targeted SEO strategies and personalized support, FirmOS significantly improved search rankings and lead generation, delivering a strong return on investment within just four months. Their expertise and collaborative approach made it easy to position LiftCPA for long-term success in attracting qualified leads.',
-    keywords: [
-      { text: 'Targeted SEO Strategies', icon: Target },
-      { text: 'Improved Search Rankings', icon: TrendingUp },
-      { text: 'Strong Return on Investment', icon: BarChart },
-    ],
-  },
-  {
-    name: 'Dominic Wong',
-    operations: 'Invoke Digital',
-    url: 'https://youtube.com/embed/jnrde6jB0Jc',
-    overview:
-      "Dominic, Managing Director of Invoke Digital, partnered with FirmOS to optimize processes and drive lead generation for his tech business. Through automation and a tailored strategy, FirmOS streamlined operations and enhanced sales efforts, resulting in significant growth, including $30K in additional MRR. Their responsive and collaborative team earned Dominic's trust, making FirmOS a valuable partner for tech-focused businesses.",
-    keywords: [
-      { text: '$30K in Additional MRR', icon: BarChart },
-      { text: 'Streamlined Operations', icon: TrendingUp },
-      { text: 'Valuable Partner for Tech Businesses', icon: Award },
-    ],
-  },
-  {
-    name: 'Mathew Cohen',
-    operations: 'Incommon Projects',
-    url: 'https://youtube.com/embed/G4AvCFjtQWA',
-    overview:
-      "FirmOS collaborated with Incommon Project to deliver a high-quality website with impressive speed and efficiency. Rodney and Martin's proactive approach, responsiveness, and ongoing support ensured a seamless experience, addressing challenges and implementing improvements even post-launch. The result was a flawless website at competitive pricing, making FirmOS a highly recommended partner for professional website design.",
-    keywords: [
-      { text: 'High-Quality Website', icon: Award },
-      { text: 'Seamless Experience', icon: ThumbsUp },
-      { text: 'Highly Recommended Partner', icon: Users },
-    ],
-  },
-];
-
 const overviewItems = [
   {
     icon: Zap,
@@ -445,20 +349,6 @@ export function HomePage() {
 
   const [activeClientVideo, setActiveClientVideo] = React.useState(0);
 
-  const nextClientVideo = () => {
-    setActiveClientVideo((prev) => (prev + 1) % clientVideos.length);
-  };
-
-  const prevClientVideo = () => {
-    setActiveClientVideo(
-      (prev) => (prev - 1 + clientVideos.length) % clientVideos.length,
-    );
-  };
-
-  const prevIndex =
-    (activeClientVideo - 1 + clientVideos.length) % clientVideos.length;
-  const nextIndex = (activeClientVideo + 1) % clientVideos.length;
-
   const toggleFAQItem = (categoryIndex: number, itemIndex: number) => {
     const key = `${categoryIndex}-${itemIndex}`;
     setOpenFAQItems((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -520,12 +410,7 @@ export function HomePage() {
                   >
                     About Us
                   </Link>
-                  <Link
-                    href="#stories"
-                    className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
-                  >
-                    Client Success Stories
-                  </Link>
+
                   <Link
                     href="#roadmap"
                     className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
@@ -590,12 +475,6 @@ export function HomePage() {
                     className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
                   >
                     About Us
-                  </Link>
-                  <Link
-                    href="#stories"
-                    className="text-[#FFFFFF] hover:bg-[#666666] hover:bg-opacity-50 px-3 py-1 rounded-full transition-colors"
-                  >
-                    Client Success Stories
                   </Link>
                   <Link
                     href="#roadmap"
@@ -827,145 +706,6 @@ export function HomePage() {
             </div>
           </div>
         </section>
-
-        {/* Client Success Stories Section */}
-        <section
-          className="py-16 px-4 bg-gradient-to-b from-[#000000] to-[#323232]"
-          id="stories"
-        >
-          <div className="container mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl md:text-5xl font-bold text-white mb-12 text-center"
-            >
-              Client Success Stories
-            </motion.h2>
-
-            <div className="relative flex flex-col items-center justify-center gap-4 mb-12">
-              <div className="relative flex items-center justify-center gap-4 w-full">
-                {/* Previous Video */}
-                <div
-                  className="relative w-1/4 aspect-video cursor-pointer transition-all duration-300 hover:scale-105"
-                  onClick={prevClientVideo}
-                >
-                  <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px] rounded-xl" />
-                  <iframe
-                    src={clientVideos[prevIndex].url}
-                    className="w-full h-full rounded-xl"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <ChevronLeft className="w-12 h-12 text-white" />
-                  </div>
-                </div>
-
-                {/* Current Video */}
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeClientVideo}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.5 }}
-                    className="w-1/2 aspect-video z-10"
-                  >
-                    <div className="relative h-full">
-                      <iframe
-                        src={clientVideos[activeClientVideo].url}
-                        className="w-full h-full rounded-xl shadow-2xl"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-
-                {/* Next Video */}
-                <div
-                  className="relative w-1/4 aspect-video cursor-pointer transition-all duration-300 hover:scale-105"
-                  onClick={nextClientVideo}
-                >
-                  <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px] rounded-xl" />
-                  <iframe
-                    src={clientVideos[nextIndex].url}
-                    className="w-full h-full rounded-xl"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <ChevronRight className="w-12 h-12 text-white" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Dot Navigation */}
-              <div className="flex items-center justify-center gap-2 mt-4">
-                {clientVideos.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveClientVideo(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === activeClientVideo
-                        ? 'bg-icon w-6'
-                        : 'bg-[#666666] hover:bg-[#999999]'
-                    }`}
-                    aria-label={`Go to video ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeClientVideo}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-                className="bg-[#323232] rounded-xl overflow-hidden shadow-lg"
-              >
-                <div className="p-8 flex flex-col md:flex-row gap-8">
-                  {/* Overview on the left */}
-                  <div className="md:w-2/3">
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      {clientVideos[activeClientVideo].name}
-                    </h3>
-                    <p className="text-xl text-[#B2B2B2] mb-4">
-                      {clientVideos[activeClientVideo].operations}
-                    </p>
-                    <div className="bg-[#666666] rounded-lg p-6 transition-all duration-300 hover:bg-[#999999] group">
-                      <p className="text-[#F2F2F2] leading-relaxed font-medium group-hover:text-lg group-hover:leading-loose">
-                        {clientVideos[activeClientVideo].overview}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Keywords on the right */}
-                  <div className="md:w-1/3 flex flex-col">
-                    <h4 className="text-xl font-semibold text-white mb-4">
-                      Key Highlights
-                    </h4>
-                    <div className="flex flex-col gap-4">
-                      {clientVideos[activeClientVideo].keywords.map(
-                        (keyword, index) => (
-                          <div
-                            key={index}
-                            className="flex items-center bg-secondary/10 border-2 border-border text-white text-base py-4 px-5 rounded-lg transition-all duration-300 hover:bg-secondary/20 shadow-lg shadow-[#323232]/20 w-fit"
-                          >
-                            <keyword.icon className="w-6 h-6 mr-4 flex-shrink-0 text-icon" />
-                            <span className="font-medium">{keyword.text}</span>
-                          </div>
-                        ),
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </section>
-
         {/* Roadmap Section */}
         <section
           className="min-h-screen bg-black text-white py-20 px-4 md:px-8"
