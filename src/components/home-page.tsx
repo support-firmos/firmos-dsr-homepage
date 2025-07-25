@@ -629,24 +629,24 @@ export function HomePage() {
               {/* Desktop */}
               <source
                 media="(min-width: 1024px)"
-                srcSet="/firmos dsr headline.png"
+                srcSet="/firmos-dsr-headline-desktop.png"
                 type="image/png"
               />
               {/* Laptop */}
               <source
                 media="(min-width: 768px) and (max-width: 1023px)"
-                srcSet="/firmos dsr headline.png"
+                srcSet="/firmos-dsr-headline-laptop.png"
                 type="image/png"
               />
               {/* Tablet */}
               <source
                 media="(min-width: 481px) and (max-width: 767px)"
-                srcSet="/firmos dsr headline.png"
+                srcSet="/firmos-dsr-headline-tablet.png"
                 type="image/png"
               />
               {/* Mobile - fallback */}
               <img
-                src="/firmos dsr headline.png"
+                src="/firmos-dsr-headline-desktop.png"
                 alt="FirmOS Abstract Design"
                 className="w-full h-full object-contain"
                 loading="eager"
