@@ -544,14 +544,7 @@ export function HomePage() {
                   >
                     FAQ
                   </Link>
-                  <Link
-                    href="https://app.firmos.ai/apps?id=3f717854-c530-470b-a56b-f53e82e296e7"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-secondary/90 text-primary px-6 py-3 rounded-[10px] hover:bg-secondary transition-all duration-300 shadow-lg hover:shadow-xl font-semibold text-lg pulse-shine-animation delay-animation"
-                  >
-                    Subscribe Now!
-                  </Link>
+
                 </div>
                 {/* <Button
                   onClick={() => setIsModalOpen(true)}
@@ -615,14 +608,7 @@ export function HomePage() {
                   >
                     FAQ
                   </Link>
-                  <Link
-                    href="https://app.firmos.ai/apps?id=3f717854-c530-470b-a56b-f53e82e296e7"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-[#FE7443] to-[#FE8F68] text-[#FFFFFF] px-4 py-2 rounded-full hover:from-[#FE8F68] hover:to-[#FE7443] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-semibold text-center animate-pulse-slow"
-                  >
-                    Subscribe Now!
-                  </Link>
+
                   {/* <Button
                     onClick={() => setIsModalOpen(true)}
                     className="bg-[#FE7443] text-[#FFFFFF] w-full rounded-full flex items-center justify-center gap-2 hover:bg-[#FE8F68] transition-all duration-300 transform hover:scale-105"
@@ -637,33 +623,41 @@ export function HomePage() {
         </nav>
 
         {/* Hero Section */}
-        <section className="relative min-h-[400px] sm:min-h-[600px] w-full py-8 sm:py-24 md:py-32 px-4 overflow-hidden">
-          {/* Image Container */}
-          <div className="hidden sm:block absolute inset-0 w-full h-full sm:relative sm:w-full sm:h-[90vh] md:h-[85vh] lg:h-[100vh]">
-            <Image
-              src="/firmos headline 1.png"
-              alt="Data analytics dashboard"
-              fill
-              className="object-cover sm:object-cover"
-              priority
-            />
-          </div>
-
-          {/* Content Container */}
-          <div className="relative container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-16 sm:-mt-[70vh] md:-mt-[70vh] lg:-mt-[80vh]">
-            <div className="w-full max-w-5xl mx-auto text-center sm:text-left">
-              {/* Content Block */}
-              <div className="bg-[#14151A]/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 sm:absolute sm:top-10 sm:right-[5%] md:top-4 lg:top-4 lg:right-[10%]">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                  Innovative FirmOS Solutions
-                </h1>
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#CCCCCC]">
-                  Elevate your accounting practice with our meticulously crafted
-                  suite of professional tools. Select the optimal FirmOS package
-                  to revolutionize your firm&apos;s efficiency, client
-                  engagement, and growth potential.
-                </p>
-              </div>
+        <section className="relative w-full overflow-hidden bg-black">
+          <div className="relative w-full" style={{ aspectRatio: '2.16/1' }}>
+            <picture>
+              {/* Desktop */}
+              <source
+                media="(min-width: 1024px)"
+                srcSet="/firmos dsr headline.png"
+                type="image/png"
+              />
+              {/* Laptop */}
+              <source
+                media="(min-width: 768px) and (max-width: 1023px)"
+                srcSet="/firmos dsr headline.png"
+                type="image/png"
+              />
+              {/* Tablet */}
+              <source
+                media="(min-width: 481px) and (max-width: 767px)"
+                srcSet="/firmos dsr headline.png"
+                type="image/png"
+              />
+              {/* Mobile - fallback */}
+              <img
+                src="/firmos dsr headline.png"
+                alt="FirmOS Abstract Design"
+                className="w-full h-full object-contain"
+                loading="eager"
+              />
+            </picture>
+            {/* Welcome Text Overlay */}
+            <div className="absolute inset-0 flex items-center justify-center z-10">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white tracking-wide text-center px-4">
+                <span className="font-normal">Welcome to </span>
+                <span className="font-bold">FirmOS</span>
+              </h1>
             </div>
           </div>
         </section>

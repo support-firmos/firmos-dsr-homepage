@@ -12,23 +12,33 @@ const Footer = () => {
       </div>
       <div className='flex flex-row items-center gap-2'>
         <Link
-          href="https://www.linkedin.com/company/firmos/">
+          href="https://www.linkedin.com/company/firmos/"
+          target="_blank"
+          rel="noopener noreferrer">
             <Image src='/linkedin.png' alt='FirmOS Linkedin' width={20} height={20} />
           </Link>
           <Link
-          href="https://www.youtube.com/@Firm-OS">
+          href="https://www.youtube.com/@Firm-OS"
+          target="_blank"
+          rel="noopener noreferrer">
             <Image src='/youtube.png' alt='FirmOS YouTube' width={20} height={20} />
           </Link>
           <Link
-          href="https://www.instagram.com/firmos.ai/?hl=en">
+          href="https://www.instagram.com/firmos.ai/?hl=en"
+          target="_blank"
+          rel="noopener noreferrer">
             <Image src='/instagram.png' alt='FirmOS Instagram' width={20} height={20} />
           </Link>
           <Link
-          href="https://web.facebook.com/FirmOSAI">
+          href="https://web.facebook.com/FirmOSAI"
+          target="_blank"
+          rel="noopener noreferrer">
             <Image src='/facebook.png' alt='FirmOS Facebook' width={20} height={20} />
           </Link>
           <Link
-          href="https://x.com/FirmOS_AI">
+          href="https://x.com/FirmOS_AI"
+          target="_blank"
+          rel="noopener noreferrer">
             <Image src='/twitter.png' alt='FirmOS Twitter' width={20} height={20} />
           </Link>
         </div>
