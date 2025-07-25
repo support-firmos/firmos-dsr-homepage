@@ -8,12 +8,8 @@ import { getSession } from '@/utils/session';
  */
 export const revalidate = 180;
 
-async function Content({ searchParams }: { searchParams: SearchParams }) {
-  const data = await getSession(searchParams);
-  // Console log the data to see what's available
-  // You can see these logs in the terminal where
-  // you run `yarn dev`
-  console.log({ data });
+async function Content({ searchParams }: { searchParams: Promise<SearchParams> }) {
+  const data = await getSession(await searchParams);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -61,7 +57,7 @@ async function Content({ searchParams }: { searchParams: SearchParams }) {
 export default async function Page({
   searchParams,
 }: {
-  searchParams: SearchParams;
+  searchParams: Promise<SearchParams>;
 }) {
   return (
     <TokenGate searchParams={searchParams}>

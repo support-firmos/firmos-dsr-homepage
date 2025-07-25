@@ -1,7 +1,5 @@
 'use client';
 
-import Linkify from 'react-linkify';
-
 export default function Error({
   error,
   reset,
@@ -12,16 +10,8 @@ export default function Error({
   return (
     <main className="flex flex-col min-h-screen items-center justify-center p-24">
       <div className="flex flex-col max-w-84 p-8 border-red-600 border">
-        <p className="mb-2 [&>a:hover]:underline [&>a]:block">
-          <Linkify
-            componentDecorator={(decoratedHref, decoratedText, key) => (
-              <a target="blank" href={decoratedHref} key={key}>
-                {decoratedText}
-              </a>
-            )}
-          >
-            {error.message}
-          </Linkify>
+        <p className="mb-2">
+          {error.message}
         </p>
 
         <button

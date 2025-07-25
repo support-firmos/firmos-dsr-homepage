@@ -29,6 +29,7 @@ import {
   ThumbsUp,
   Clock,
   ChevronDown,
+  Share,
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -106,7 +107,7 @@ const faqData: FAQCategory[] = [
       {
         question: 'Do you offer a guarantee?',
         answer:
-          'FirmOS offers a 30-Day Satisfaction-Based Refund. If youapos;re not satisfied with our service within the first 30 days, we&apos;ll refund your retainer, no questions asked.',
+          'FirmOS offers a 30-Day Satisfaction-Based Refund. If you&apos;re not satisfied with our service within the first 30 days, we&apos;ll refund your retainer, no questions asked.',
       },
       {
         question:
@@ -354,21 +355,26 @@ const videos = [
     description:
       'Take control of your inbox with AI-powered efficiency. Our AI Inbox Manager sorts, prioritizes, and responds to emails, keeping you organized and focused on what matters. Less clutter, more clarity.',
     status: null, // No indicator
+    icon: '💬', // Speech bubble icon
+    shortDescription: 'Take control of your inbox with AI-powered efficiency.',
   },
   {
     title: 'AI Content Generator',
     url: 'https://youtube.com/embed/rseJGWxFCVo',
     description:
       `Creating high-quality content takes time. Our AI Content Generator helps you write articles, social media posts, and marketing copy—quickly and effortlessly. Aligned with your brand's identity, it simplifies the process so you can focus on what matters most: creating impact.`,
-    status: null, // No indicator
+    status: 'Coming Soon!', // Show the indicator
+    icon: '✨', // Sparkle icon
+    shortDescription: 'Create engaging content with advanced AI assistance.',
   },
   {
     title: 'AI Marketing Analytics',
     url: 'https://youtube.com/embed/zaQyYuYxSuQ',
     description:
       'Make smarter decisions with data. Our AI Marketing Analytics tool provides insights into your marketing performance, helping you analyze data from multiple channels to refine strategies and improve ROI.',
-
-    status: 'Coming Soon !', // Show the indicator
+    status: null, // No indicator
+    icon: '📊', // Bar chart icon
+    shortDescription: 'Unlock insights with intelligent data analysis.',
   },
 ];
 
@@ -408,7 +414,7 @@ function TimelineSegment({
       <div
         className={`w-8 transition-all duration-300 group-hover:bg-[#FE7443] ${
           isSelected ? 'bg-[#FE7443]' : ''
-        } clip-[polygon(0_0,_0_100%,_100%_50%)]`}
+        }`}
       />
 
       <div
@@ -664,66 +670,97 @@ export function HomePage() {
 
         {/* Video Carousel Section */}
         <section className="py-16 px-4" id="products">
-          <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-              {/* Video Buttons (2/12 width) */}
-              <div className="md:col-span-2 flex md:flex-col space-x-4 md:space-x-0 space-y-0 md:space-y-4 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0">
-                {videos.map((video, index) => (
-                  <Button
-                    key={index}
-                    onClick={() => setActiveVideo(index)}
-                    className={`text-left w-full h-16 ${
-                      activeVideo === index
-                        ? 'bg-secondary text-secondary-foreground'
-                        : 'bg-[#323232]/60 text-primary-foreground'
-                    } rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-between px-4 py-3`}
-                  >
-                    <div className="flex items-center">
-                      <span className="text-sm font-semibold flex-1 whitespace-normal md:block hidden">
-                        {video.title}
-                      </span>
-                      <span className="text-sm font-semibold md:hidden">
-                        {index + 1}
-                      </span>
-                      {/* In Progress Indicator for Mobile */}
-                      {video.status && (
-                        <span className="ml-2 bg-[#ff3131] text-white text-xs font-bold px-2 py-1 rounded-full md:hidden">
-                          {video.status}
-                        </span>
-                      )}
+          <div className="container mx-auto max-w-none px-4">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+              {/* Product Selection (2/12 width) */}
+              <div className="md:col-span-2">
+                <h3 className="text-xl font-bold text-[#FFFFFF] mb-6">Choose a Product</h3>
+                <div className="flex md:flex-col space-x-4 md:space-x-0 space-y-0 md:space-y-4 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0">
+                  {videos.map((video, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setActiveVideo(index)}
+                      className={`relative cursor-pointer transition-all duration-300 transform hover:scale-105 min-w-[280px] md:min-w-0 ${
+                        activeVideo === index ? 'scale-105' : ''
+                      }`}
+                    >
+                      <div className={`bg-[#323232] rounded-xl p-4 border transition-all duration-300 ${
+                        activeVideo === index
+                          ? 'border-[#4CAF50] bg-[#323232]/80'
+                          : 'border-[#666666] hover:border-[#4CAF50]/60 hover:bg-[#323232]/60'
+                      }`}>
+                        <div className="flex items-start space-x-3">
+                          {/* Icon */}
+                          <div className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center text-2xl ${
+                            activeVideo === index
+                              ? 'bg-[#999999] text-[#FFFFFF]'
+                              : 'bg-[#666666] text-[#FFFFFF]'
+                          }`}>
+                            {video.icon}
+                          </div>
+                          
+                          {/* Content */}
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center space-x-2 mb-1">
+                              <h4 className={`text-sm font-bold truncate ${
+                                activeVideo === index
+                                  ? 'text-[#4CAF50]'
+                                  : 'text-[#FFFFFF]'
+                              }`}>
+                                {video.title}
+                              </h4>
+                            </div>
+                            {video.status && (
+                              <div className="absolute -top-2 -right-2">
+                                <span className="bg-[#FF6B6B] text-white text-xs font-bold px-2 py-1 rounded-full">
+                                  {video.status}
+                                </span>
+                              </div>
+                            )}
+                            <p className="text-xs text-[#CCCCCC] mb-3 leading-relaxed">
+                              {video.shortDescription}
+                            </p>
+                            <div className="flex items-center text-[#4CAF50] text-xs font-semibold">
+                              <PlayCircle className="w-3 h-3 mr-1" />
+                              Watch Demo
+                              <ChevronRight className="w-3 h-3 ml-1" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <ChevronRight className="h-4 w-4 flex-shrink-0 ml-2" />
-                    {/* In Progress Indicator for Desktop */}
-                    {video.status && (
-                      <span className="absolute -top-2 right-0 md:flex hidden items-center bg-[#ff3131] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md transform hover:translate-y-[-2px] transition-all">
-                        {video.status}
-                      </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Video Player (8/12 width) */}
+              <div className="md:col-span-8">
+                <div className="aspect-video bg-[#FFFFFF] rounded-xl shadow-2xl">
+                  <iframe
+                    src={videos[activeVideo].url.replace(
+                      'youtu.be/',
+                      'youtube.com/embed/',
                     )}
-                  </Button>
-                ))}
+                    className="w-full h-full rounded-xl"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
               </div>
 
-              {/* Video Player (7/12 width) */}
-              <div className="md:col-span-7 aspect-video">
-                <iframe
-                  src={videos[activeVideo].url.replace(
-                    'youtu.be/',
-                    'youtube.com/embed/',
-                  )}
-                  className="w-full h-full rounded-xl shadow-2xl"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-
-              {/* Description Card (3/12 width) */}
-              <Card className="md:col-span-3 bg-[#323232]/40 backdrop-blur-sm text-[#FFFFFF]">
+              {/* Description Card (2/12 width) */}
+              <Card className="md:col-span-2 bg-[#323232] text-[#FFFFFF] border-[#4CAF50]/20">
                 <CardContent className="p-6 flex flex-col h-full">
-                  <h3 className="text-xl font-bold mb-4">
-                    {videos[activeVideo].title}
-                  </h3>
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="w-12 h-12 bg-[#666666] rounded-lg flex items-center justify-center text-2xl text-[#FFFFFF]">
+                      {videos[activeVideo].icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-[#FFFFFF]">
+                      {videos[activeVideo].title}
+                    </h3>
+                  </div>
                   <p
-                    className="flex-grow mb-6 text-[#CCCCCC]"
+                    className="flex-grow mb-6 text-[#CCCCCC] leading-relaxed"
                     dangerouslySetInnerHTML={{
                       __html: videos[activeVideo].description,
                     }}
@@ -732,7 +769,7 @@ export function HomePage() {
                     href="https://app.firmos.ai/apps?id=3f717854-c530-470b-a56b-f53e82e296e7"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-secondary text-secondary-foreground px-6 py-3 rounded-full hover:from-[#FE8F68] hover:to-[#FE7443] transition-all duration-300 transform hover:scale-105 text-center font-semibold shadow-lg hover:shadow-xl"
+                    className="w-full bg-white text-[#323232] px-6 py-3 rounded-lg hover:bg-[#F5F5F5] transition-all duration-300 transform hover:scale-105 text-center font-semibold shadow-lg hover:shadow-xl"
                   >
                     Get it Now!
                   </Link>
@@ -769,7 +806,7 @@ export function HomePage() {
                 className="bg-[#666666]/40 backdrop-blur-sm rounded-xl p-6"
               >
                 <p className="text-[#E5E5E5] leading-relaxed">
-                FirmOS provides an AI-powered automation platform designed to help accounting firms improve efficiency and support long-term growth. By automating repetitive tasks, we allow firms to focus on core business priorities, increasing productivity and profitability. With solutions for business development, talent management, and operations, FirmOS addresses the specific needs of accounting firms with a practical and structured approach.
+                FirmOS is the all-in-one platform designed exclusively for fractional CFOs and accounting firms. With a focus on Business Development, Talent, Operations, and Management efficiency, we provide innovative tools to streamline processes, attract high-value clients, and empower your team—all while ensuring financial stability.
                 </p>
               </motion.div>
               <motion.div
@@ -778,14 +815,9 @@ export function HomePage() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="bg-[#666666]/40 backdrop-blur-sm rounded-xl p-6"
               >
-                {/* <p className="text-[#E5E5E5] leading-relaxed">
-                  Our mission is to help accounting firms overcome growth
-                  challenges and scale sustainably with AI-powered automation
-                  and strategic systems. Whether youapos;re looking to improve
-                  workflow efficiency, retain top talent, or build a consistent
-                  client pipeline, FirmOS is here to transform the way you work
-                  and grow your business.
-                </p> */}
+                <p className="text-[#E5E5E5] leading-relaxed">
+                  Our mission is to help accounting firms overcome growth challenges and scale sustainably with AI-powered automation and strategic systems. Whether you&apos;re looking to improve workflow efficiency, retain top talent, or build a consistent client pipeline, FirmOS is here to transform the way you work and grow your business.
+                </p>
               </motion.div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -1063,7 +1095,7 @@ export function HomePage() {
                 </div>
               </div>
               {/* Vertical Divider */}
-              <div className="absolute left-1/4 top-0 bottom-0 w-px bg-gray-700 hidden md:block"></div>
+              {/* <div className="absolute left-1/4 top-0 bottom-0 w-px bg-gray-700 hidden md:block"></div> */}
             </div>
           </div>
         </section>
@@ -1150,7 +1182,7 @@ export function HomePage() {
                   href="https://app.firmos.ai/messaging"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-gradient-to-r from-[#FE7443] to-[#FE8F68] text-[#FFFFFF] px-6 py-3 rounded-full hover:from-[#FE8F68] hover:to-[#FE7443] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
+                  className="inline-flex items-center justify-center bg-gradient-to-r from-[#22C55E] to-[#16A34A] text-[#FFFFFF] px-6 py-3 rounded-full hover:from-[#16A34A] hover:to-[#22C55E] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
                 >
                   Ask a Question
                 </Link>

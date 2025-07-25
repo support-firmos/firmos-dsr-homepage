@@ -1,6 +1,5 @@
 import Footer from '@/components/Footer';
 import { HomePage } from '@/components/home-page';
-import { LandingPage } from '@/components/landing-page';
 import { TokenGate } from '@/components/TokenGate';
 import { getSession } from '@/utils/session';
 
@@ -10,12 +9,8 @@ import { getSession } from '@/utils/session';
  */
 export const revalidate = 180;
 
-async function Content({ searchParams }: { searchParams: SearchParams }) {
-  const data = await getSession(searchParams);
-  // Console log the data to see what's available
-  // You can see these logs in the terminal where
-  // you run `yarn dev`
-  console.log({ data });
+async function Content({ searchParams }: { searchParams: Promise<SearchParams> }) {
+  const data = await getSession(await searchParams);
   return (
     <main>
       <h1
@@ -45,13 +40,12 @@ async function Content({ searchParams }: { searchParams: SearchParams }) {
         </span>
       </h1>
 
-      {/* <LandingPage /> */}
       <HomePage />
       <Footer />
     </main>
   );
 }
-export default function Page({ searchParams }: { searchParams: SearchParams }) {
+export default function Page({ searchParams }: { searchParams: Promise<SearchParams> }) {
   return (
     <TokenGate searchParams={searchParams}>
       <Content searchParams={searchParams} />
